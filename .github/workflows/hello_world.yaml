@@ -34,3 +34,7 @@ jobs:
           node-version: 24
       - id: checkout
         uses: actions/checkout@v5
+      - id: install_dependencies
+        run: npm i -g @angular/cli && npm ci
+      - id: build
+        run: ng build
