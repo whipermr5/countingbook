@@ -1,0 +1,11 @@
+name: hello_world
+on:
+  - push
+jobs:
+  greetings:
+    runs-on: ubuntu-latest
+    steps:
+      - id: greet
+        run: echo hello world
+      - id: explore
+        run: date && whoami && pwd && ls -la
