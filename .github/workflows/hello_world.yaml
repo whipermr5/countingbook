@@ -22,3 +22,15 @@ jobs:
       with:
         text: 'ship ship ship!'
         color: 'red'
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - id: gh_ref
+        run: echo "github ${{ github.ref_name }}"
+      - id: setup-node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - id: checkout
+        uses: actions/checkout@v5
