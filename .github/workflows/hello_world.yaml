@@ -9,6 +9,10 @@ jobs:
         run: echo hello world
       - id: explore
         run: date && whoami && pwd && ls -la
+      - id: pass
+        run: echo curr_time=$(date) >> $GITHUB_OUTPUT
+      - id: receive
+        run: echo received ${{ steps.pass.outputs.curr_time }}
   cow:
     name: Cowsays
     runs-on: ubuntu-latest
